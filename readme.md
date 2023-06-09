@@ -2,7 +2,7 @@
 
 ## Node / NPM (Node package manager)
 
-- [ ] [Installera Node](npm/install.html)
+- [ ] [Installera Node](npm/install.md)
 - [ ] npmjs.com
 - [ ] npm install
 - [ ] Package.json
