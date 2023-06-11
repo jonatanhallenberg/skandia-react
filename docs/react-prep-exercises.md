@@ -32,7 +32,7 @@ const sum = (a, b) => { return a + b } //med return
 **2) Skriv om funktionen getPerson till en arrow-funktion utan att använda return**
 
 ```js
-function getPerson(firstnamn: string, lastname: string, birthyear: number) {
+function getPerson(firstnamn, lastname, birthyear) {
     return {
         firstname,
         lastname,
@@ -45,7 +45,7 @@ function getPerson(firstnamn: string, lastname: string, birthyear: number) {
   
 ```js
 // Viktigt med paranteser runt måsvingarna!!
-const getPerson = (firstname: string, lastname: string, birthyear: string) => ({
+const getPerson = (firstname, lastname, birthyear) => ({
     firstname, 
     lastname,
     birthyear
@@ -142,7 +142,7 @@ cats.filter(cat => cat.name.toLowerCase().startsWith("m"))
     <summary>Svar</summary>
 
 ```js
-    cats.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? -1 : 1)
+    cats.sort((a, b) => b.name.localeCompare(a.name))
 ```
 </details>
 

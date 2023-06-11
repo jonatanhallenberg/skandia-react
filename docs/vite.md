@@ -7,7 +7,7 @@
 
 Länk: https://vitejs.dev/
 
-## Starta projekt
+## Skapa ett projekt
 
 1. Skapa en ny mapp
 2. Öppna mappen i VS Code

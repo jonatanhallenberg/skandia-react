@@ -14,11 +14,6 @@
 - [ ] [node_modules](node.md#node_modules)
 - [ ] [Kommandon](node.md#kommandon)
 
-## Typescript
-
-- [ ] [Genomgång](typescript.md#typescript)
-- [ ] [Övningar](ts-exercises/index.md)
-
 ## Förberedande JS / TS inför React
 
 - [ ] [Arrow functions](react-prep.md#arrow-functions)
@@ -29,8 +24,13 @@
 - [ ] [Template strings](react-prep.md#template-strings)
 - [ ] [Övningar](react-prep-exercises.md)
 
+## Typescript
+
+- [ ] [Genomgång](typescript.md#typescript)
+- [ ] [Övningar](ts-exercises/index.md)
+
 ## Vite
 
-- [ ] Vad är Vite?
-- [ ] Starta projekt
-- [ ] Grundläggande kommandon
+- [ ] [Vad är Vite?](vite.md#vad-är-vite)
+- [ ] [Skapa ett projekt](vite.md#skapa-ett-projekt)
+- [ ] [Grundläggande kommandon](vite.md#grundläggande-kommandon)
