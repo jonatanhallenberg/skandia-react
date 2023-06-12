@@ -1,5 +1,5 @@
 {
-  "name": "npm-demo",
+  "name": "ts-demo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "random": "^4.1.0"
+  "devDependencies": {
+    "typescript": "^5.1.3"
   }
 }
