@@ -35,18 +35,10 @@
 - [ ] [Skapa ett projekt](vite.md#skapa-ett-projekt)
 - [ ] [Grundläggande kommandon](vite.md#grundläggande-kommandon)
 
-## Reactkomponenter
+## React / komponenter
 
-- [ ] [Vad är en komponent?](react-components.md#vad-är-en-komponent)
-- [ ] [Skapa en komponent](react-components.md#skapa-en-komponent)
-- [ ] [Använda en komponent](react-components.md#använda-en-komponent)
-- [ ] [Props](react-components.md#props)
-- [ ] [Children](react-components.md#children)
-- [ ] [Övningar](react-components-exercises.md)
+- [ ] [React - intro, komponenter](react.md)
 
 ## Hämta data från API
 
-- [ ] [Fetch](fetch.md#fetch)
-- [ ] [useState](fetch.md#usestate)
-- [ ] [useEffect](fetch.md#useeffect)
-- [ ] [Övningar](fetch-exercises.md)
+- [ ] [React - hämta och visa data](react-fetch-show-data.md)
