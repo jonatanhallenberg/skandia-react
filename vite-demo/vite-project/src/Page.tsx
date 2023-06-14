@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { CatFact, getCatFacts } from './api/catFactApi';
 
 type PageProps = {
     title: string,
@@ -6,10 +7,7 @@ type PageProps = {
     children: React.ReactNode
 }
 
-type CatFact = {
-    fact: string,
-    length: number
-}
+
 
 const Page = ({ title, children, limit }: PageProps) => {
 
@@ -19,9 +17,8 @@ const Page = ({ title, children, limit }: PageProps) => {
     
     useEffect(() => {
         const loadData = async () => {
-            const res = await fetch(`https://catfact.ninja/facts?limit=${limit}`);
-            const data = await res.json();
-            setCatFacts(data.data);
+            const catFacts = await getCatFacts();
+            setCatFacts(catFacts);
             setIsLoadingCatFacts(false);
         }
         setIsLoadingCatFacts(true);
