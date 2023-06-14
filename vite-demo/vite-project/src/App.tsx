@@ -1,16 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-//import './App.css'
+import { useState } from 'react';
+import Page from './Page';
+import Filter from './Filter';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+
+  const [limit, setLimit] = useState(10);
 
   return (
     <>
-      Hej
-    </>
-  )
-}
+      <Page title="Page 1" limit={limit}>
+        Hej <b>Vite</b>
+      </Page>
 
+      <Filter onClick={(limit) => setLimit(limit)} />
+    </>
+  );
+}
 export default App
