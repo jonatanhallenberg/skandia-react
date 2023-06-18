@@ -3,8 +3,6 @@ type FilterProps = {
 }
 
 const Filter = ({ onClick }: FilterProps) => {
-
-
     return (
         <>
             <button onClick={() => onClick(1)}>1</button>
