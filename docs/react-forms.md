@@ -143,8 +143,3 @@ const App = () => {
 ## Validering
 
 - Att ha en användarvänlig validering är viktigt för att användaren ska förstå vad som förväntas av den
-- Vi kan använda `required` för att tvinga användaren att fylla i ett fält
-
-## Webbläsarens inbyggda valdering vs. egna validering
-
-- Man kan använda webbläsarens inbyggda validering genom att använda attribut som t.ex. 
