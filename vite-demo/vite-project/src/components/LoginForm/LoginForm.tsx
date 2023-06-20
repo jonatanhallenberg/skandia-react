@@ -2,18 +2,6 @@ import { useState, useEffect, useCallback } from "react";
 
 export const LoginForm = () => {
 
-    const [formState, setFormState ] = useState({
-        username: {
-            value: "",
-            valid: false,
-            touched: false
-        },
-        password: {
-            value: "",
-            valid: false,
-            touched: false
-        }
-    })
 
     const [username, setUsername] = useState("");
     const [usernameValid, setUsernameValid] = useState(true);
@@ -49,7 +37,7 @@ export const LoginForm = () => {
     const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (isFormValid()) {
-            console.log('formuläret skickas', username, password);
+            console.log('formuläret skickas', { username: Number(username), password });
         }
     }
 
