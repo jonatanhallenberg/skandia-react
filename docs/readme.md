@@ -47,3 +47,11 @@
 
 - [ ] [React - bygga eget formulär från grunden](react-forms.md)
 - [ ] [React - använda react-form-hook och useForm](react-useForm.md)
+
+## Redux
+
+- [ ] [Redux](redux.md)
+
+## React Router
+
+- [ ] [React Router](react-router.md)
