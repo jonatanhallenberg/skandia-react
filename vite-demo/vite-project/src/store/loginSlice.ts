@@ -43,6 +43,7 @@ const loginSlice = createSlice({
     builder.addCase(logIn.fulfilled, (state, action) => {
       state.isLoggedIn = true;
       state.loggedInUser = action.payload;
+      
     })
   }
 })

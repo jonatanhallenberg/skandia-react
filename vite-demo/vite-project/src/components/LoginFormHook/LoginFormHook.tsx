@@ -1,6 +1,7 @@
 import { useForm, SubmitHandler } from "react-hook-form"
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { logIn } from '../../store/loginSlice';
+import { useNavigate } from "react-router-dom";
 
 type Inputs = {
     username: string,
@@ -13,7 +14,12 @@ export const LoginFormHook = () => {
 
     const dispatch = useAppDispatch();
     const isLoggedIn = useAppSelector(state => state.login.isLoggedIn);
+    const navigate = useNavigate();
 
+    if (isLoggedIn) {
+        navigate("/companies");
+    }
+    
     const {
         register,
         handleSubmit,

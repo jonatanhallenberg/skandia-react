@@ -38,23 +38,92 @@ const store = configureStore({
 ```
 
 - För att använda Redux / Redux Toolkit behöver vi wrappa vår app i en `Provider`
+- Den lägger vi runt App i main.tsx
 
 ```tsx
 
 import { Provider } from 'react-redux'
+import store from './store'
 
-const App = () => {
-    return (
-        <Provider store={store}>
-            <h1>Min app</h1>
-        </Provider>
-    )
-}
+...
+<Provider store={store}>
+      <App />
+</Provider>
 ```
 
 - Exempel på Redux Toolkit setup som använder `createSlice` och `createAsyncThunk`
 
 ```tsx
+import { createSlice } from '@reduxjs/toolkit'
+import type { PayloadAction } from '@reduxjs/toolkit'
 
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+interface CounterState {
+  value: number
+}
+
+export const loadData = createAsyncThunk(
+  'counter/loadData',
+  async (input, thunkAPI) => {
+    const response = await loadData();
+    return response;
+  }
+)
+
+const initialState = { value: 0 } as CounterState
+
+const counterSlice = createSlice({
+  name: 'counter',
+  initialState,
+  reducers: {
+    increment(state) {
+      state.value++
+    },
+    decrement(state) {
+      state.value--
+    },
+    incrementByAmount(state, action: PayloadAction<number>) {
+      state.value += action.payload
+    },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(loadData.fulfilled, (state, action) => {
+      state.value = action.payload
+    })
+  },
+})
+
+export const { increment, decrement, incrementByAmount } = counterSlice.actions
+export default counterSlice.reducer
+```
+
+## Typa statet
+
+- För att typa statet behöver vi skapa en `RootState` som innehåller alla slices
+- Vi behöver dessutom skapa useAppDispatch samt useAppSelector som är useDispatch respektive useSelector fast typade efter vårt state
+
+https://redux-toolkit.js.org/usage/usage-with-typescript
+
+## Dispatcha en action i en komponent
+
+- För att dispatcha en action behöver vi använda useAppDispatch
+
+```tsx
+
+import { useAppDispatch } from './store'
+
+const dispatch = useAppDispatch()
+
+dispatch(increment())
+```
+
+## Hämta data från statet i en komponent
+
+- För att hämta data från statet behöver vi använda useAppSelector
+
+```tsx
+
+import { useAppSelector } from './store'
+
+const counter = useAppSelector((state) => state.counter.value)
+```
 
