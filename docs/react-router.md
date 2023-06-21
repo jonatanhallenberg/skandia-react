@@ -17,7 +17,7 @@ npm install react-router-dom
 
 ```tsx
 
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 
 const App = () => {
     return (
@@ -35,20 +35,12 @@ const App = () => {
                     </li>
                 </ul>
             </nav>
-            <Switch>
-                <Route exact path="/">
-                    <Home />
-                </Route>
-                <Route path="/user">
-                    <UserListPage />
-                </Route>
-                <Route path="/user/:userId">
-                    <SingleUserPage />
-                </Route>
-                <Route path="*">
-                    <NotFound />
-                </Route>
-            </Switch>
+            <Routes>
+                <Route exact path="/" element={<Home />} />
+                <Route path="/user" element={<UserListPage />} />
+                <Route path="/user/:userId" element={<SingleUserPage />} />
+                <Route path="*" element={<NotFound />} />
+            </Routes>
         </BrowserRouter>
     )
 }
