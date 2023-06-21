@@ -1,4 +1,6 @@
 import { useForm, SubmitHandler } from "react-hook-form"
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { logIn, logOut } from '../../store/loginSlice';
 
 type Inputs = {
     username: string,
@@ -8,6 +10,9 @@ type Inputs = {
 }
 
 export const LoginFormHook = () => {
+
+    const dispatch = useAppDispatch();
+    const isLoggedIn = useAppSelector(state => state.login.isLoggedIn);
 
     const {
         register,
@@ -19,11 +24,14 @@ export const LoginFormHook = () => {
     const userType = watch("userType");
     console.log('userType', userType);
 
-    const onSubmit: SubmitHandler<Inputs> = (data) => console.log('data från formulär', data)
+    const onSubmit: SubmitHandler<Inputs> = (data) => {
+        dispatch(logIn({ username: data.username, password: data.password }))
+    }
 
     return (
         <>
             <h1>Logga in (useForm)</h1>
+            <h2>{isLoggedIn ? "Inloggad" : "Utloggad"}</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
 
                 <div>
@@ -57,7 +65,7 @@ export const LoginFormHook = () => {
                         {errors.email?.type === "required" && <div style={{ color: "red" }}>Du har inte fyllt i e-post</div>}
                         {errors.email?.type === "pattern" && <div style={{ color: "red" }}>Du måste fylla i en korrekt e-post</div>}
                         <input
-                            {...register("email", { required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g })}
+                            {...register("email", { required: true, pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g })}
                             type="text"
                         ></input>
                     </div>
@@ -66,5 +74,6 @@ export const LoginFormHook = () => {
 
                 <button type="submit">Logga in</button>
             </form>
+            <button type="button" onClick={() => dispatch(logOut())}>Logga ut</button>
         </>)
 }
