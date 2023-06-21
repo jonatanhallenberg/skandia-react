@@ -1,6 +1,6 @@
 import { useForm, SubmitHandler } from "react-hook-form"
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { logIn, logOut } from '../../store/loginSlice';
+import { logIn } from '../../store/loginSlice';
 
 type Inputs = {
     username: string,
@@ -74,6 +74,5 @@ export const LoginFormHook = () => {
 
                 <button type="submit">Logga in</button>
             </form>
-            <button type="button" onClick={() => dispatch(logOut())}>Logga ut</button>
         </>)
 }
