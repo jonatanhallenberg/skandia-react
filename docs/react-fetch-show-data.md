@@ -22,7 +22,7 @@ fetch('https://jsonplaceholder.typicode.com/todos/1')
 
 ```jsx
 const App = () => {
-    const [todos, setTodos] = useState([])
+    const [todos, setTodos] = useState(null)
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/todos')
@@ -33,6 +33,7 @@ const App = () => {
 
     return (
         <div>
+            {todos.length <p>Inga todos</p>}
             {todos.map(todo => <p>{todo.title}</p>)}
         </div>
     )
