@@ -1,16 +1,12 @@
 import { useState } from 'react';
-import Page from './Page';
-import Filter from './Filter';
-import { LoginForm } from './components/LoginForm';
 import { LoginFormHook } from './components/LoginFormHook';
-import { Provider } from 'react-redux'
-import { store } from './store/store';
 import { useAppSelector, useAppDispatch } from './store/hooks';
-import { logOut } from './store/loginSlice';
 import { CompaniesList } from './components/CompaniesList';
 import { BrowserRouter, Routes, Route, Link, Navigate } from 'react-router-dom'
 import { Home } from './pages/Home';
 import { Company } from './pages/Company';
+import { Button } from './components/Button';
+import styles from './components/Button/button.module.css';
 
 const App = () => {
 
@@ -19,9 +15,11 @@ const App = () => {
   const [limit, setLimit] = useState(10);
   const isLoggedIn = useAppSelector(state => state.login.isLoggedIn);
 
+
   return (
     <BrowserRouter>
-      <ul>
+      <Button variant='success'></Button>
+      <ul className={styles.button}>
         <li>
           <Link to="/">Hem</Link>
         </li>
