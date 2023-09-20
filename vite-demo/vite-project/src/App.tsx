@@ -18,7 +18,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Button variant='success'></Button>
+      <Button label="Min knapp" variant='success'></Button>
       <ul className={styles.button}>
         <li>
           <Link to="/">Hem</Link>
