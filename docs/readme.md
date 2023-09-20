@@ -59,3 +59,15 @@
 ## Styling / CSS
 
 - [ ] [React - styling](react-styling.md)
+
+## Storybook / designsystem
+
+- [ ] [Storybook](storybook.md)
+
+## useContext, Custom hooks, Animationer
+
+## Testning - React testing library, Jest
+## Testning - Cypress, Deployment
+
+
+
