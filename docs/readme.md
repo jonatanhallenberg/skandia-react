@@ -66,6 +66,10 @@
 
 ## useContext, Custom hooks, Animationer
 
+- [ ] [useContext](react-useContext.md)
+- [ ] [Custom hooks](react-custom-hooks.md)
+- [ ] [Animationer](react-animationer.md)
+
 ## Testning - React testing library, Jest
 ## Testning - Cypress, Deployment
 

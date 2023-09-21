@@ -15,7 +15,6 @@ const App = () => {
   const [limit, setLimit] = useState(10);
   const isLoggedIn = useAppSelector(state => state.login.isLoggedIn);
 
-
   return (
     <BrowserRouter>
       <Button label="Min knapp" variant='success'></Button>
