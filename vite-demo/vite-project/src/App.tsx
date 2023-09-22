@@ -8,6 +8,8 @@ import { Menu } from './components/Menu';
 import UserContextProvider from './context/UserContextProvider';
 import { useUserContext } from './context/UserContext';
 import { useCookie } from './hooks/useCookie';
+import { Animation } from './components/Animation';
+import { SpringAnimation } from './components/Animation/SpringAnimation';
 
 const AppRoutes = () => {
 
@@ -16,6 +18,8 @@ const AppRoutes = () => {
 
   return <>{cookie}<Routes>
     <Route path="/" element={<Home />} />
+    <Route path="/animation" element={<Animation />} />
+    <Route path="/springanimation" element={<SpringAnimation />} />
     <Route path="/login" element={<LoginFormHook />} />
     <Route path="/companies" element={userState.isLoggedIn ? <CompaniesList /> : <Navigate to="/login" />} />
     <Route path="/companies/:companyId" element={<Company />} />
