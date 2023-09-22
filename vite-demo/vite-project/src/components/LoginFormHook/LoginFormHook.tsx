@@ -2,6 +2,9 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { logIn } from '../../store/loginSlice';
 import { useNavigate } from "react-router-dom";
+import { UserContext, useUserContext } from "../../context/UserContext";
+import { useEffect } from "react";
+import { loginUser } from "../../api/loginUser"
 
 type Inputs = {
     username: string,
@@ -12,14 +15,15 @@ type Inputs = {
 
 export const LoginFormHook = () => {
 
-    const dispatch = useAppDispatch();
-    const isLoggedIn = useAppSelector(state => state.login.isLoggedIn);
+    const { setUserState, userState } = useUserContext();
     const navigate = useNavigate();
 
-    if (isLoggedIn) {
-        navigate("/companies");
-    }
-    
+    useEffect(() => {
+        if (userState.isLoggedIn) {
+            navigate("/companies");
+        }
+    }, [userState.isLoggedIn, navigate])
+
     const {
         register,
         handleSubmit,
@@ -28,16 +32,18 @@ export const LoginFormHook = () => {
     } = useForm<Inputs>()
 
     const userType = watch("userType");
-    console.log('userType', userType);
 
     const onSubmit: SubmitHandler<Inputs> = (data) => {
-        dispatch(logIn({ username: data.username, password: data.password }))
+        //dispatch(logIn({ username: data.username, password: data.password }))
+        loginUser(data.username, data.password).then((response) => {
+            setUserState({ isLoggedIn: true, loggedInUser: response })
+        });
     }
 
     return (
         <>
             <h1>Logga in (useForm)</h1>
-            <h2>{isLoggedIn ? "Inloggad" : "Utloggad"}</h2>
+            <h2>{userState.isLoggedIn ? "Inloggad" : "Utloggad"}</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
 
                 <div>
