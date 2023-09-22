@@ -7,17 +7,19 @@ import { Button } from './components/Button';
 import { Menu } from './components/Menu';
 import UserContextProvider from './context/UserContextProvider';
 import { useUserContext } from './context/UserContext';
+import { useCookie } from './hooks/useCookie';
 
 const AppRoutes = () => {
 
   const { userState } = useUserContext();
+  const cookie = useCookie("gdpr-google-analytics");
 
-  return <Routes>
+  return <>{cookie}<Routes>
     <Route path="/" element={<Home />} />
     <Route path="/login" element={<LoginFormHook />} />
     <Route path="/companies" element={userState.isLoggedIn ? <CompaniesList /> : <Navigate to="/login" />} />
     <Route path="/companies/:companyId" element={<Company />} />
-  </Routes>
+  </Routes></>
 }
 
 const App = () => {
