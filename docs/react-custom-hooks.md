@@ -14,7 +14,7 @@ I denna övning ska vi bygga en custom hook som heter `useCookie`. Den ska anvä
 
 ### Steg 1 - Skapa en custom hook
 
-Skapa en fil som heter `useCookie.js` i din `src`-mapp. I denna fil ska vi skapa en custom hook som heter `useCookie`.
+Skapa en fil som heter `useCookie.ts` i din `src`-mapp. I denna fil ska vi skapa en custom hook som heter `useCookie`.
 
 En custom hook är en funktion som börjar med `use` och som kan använda andra hooks inuti sig. I detta fall ska vi använda `useState` och `useEffect`.
 
@@ -92,7 +92,7 @@ setCookie(cookie);
 
 ### Steg 3 - Använda custom hook
 
-Nu ska vi använda vår custom hook. Vi ska använda den i `App.js`. Vi ska skicka in `cookieName` som argument.
+Nu ska vi använda vår custom hook. Vi ska använda den i `App.tsx`. Vi ska skicka in `cookieName` som argument.
 
 ```js
 const cookie = useCookie('cookieName');
