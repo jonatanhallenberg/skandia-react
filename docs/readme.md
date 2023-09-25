@@ -71,6 +71,9 @@
 - [ ] [Animationer](react-animationer.md)
 
 ## Testning - React testing library, Jest
+
+- [ ] [React testing library](react-testing-library.md)
+- [ ] [Testa redux](redux-testing.md)
 ## Testning - Cypress, Deployment
 
 
