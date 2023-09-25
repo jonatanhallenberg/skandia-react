@@ -46,14 +46,15 @@ export default {
 }
 ```
 
-## Exempel
+## Exempeltest, button.spec.tsx
 
 ```tsx
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import { Button } from './Button';
+import '@testing-library/jest-dom';
 
 test('renders learn react link', () => {
-    render(<App />);
+    render(<Button label="Test" variant="danger" />);
     const linkElement = screen.getByText(/learn react/i);
     expect(linkElement).toBeInTheDocument();
 });
