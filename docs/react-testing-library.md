@@ -16,10 +16,12 @@
 - Enkelt att skriva test
 - Enkelt att läsa test
 
-## Installera
+## Installationsguide - Vite
+
+- Installera React testing library
 
 ```bash
-npm install --save-dev @testing-library/react
+npm install --save-dev jest @types/jest ts-jest @testing-library/react @testing-library/jest-dom ts-jest jest-environment-jsdom
 ```
 
 ## Exempel
