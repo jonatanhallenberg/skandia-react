@@ -24,6 +24,28 @@
 npm install --save-dev jest @types/jest ts-jest @testing-library/react @testing-library/jest-dom ts-jest jest-environment-jsdom
 ```
 
+- Lägg till jest.config.js:
+
+```js
+/** @type {import('ts-jest').JestConfigWithTsJest} */
+export default {
+  preset: 'ts-jest',
+  testEnvironment: 'jsdom',
+};
+```
+
+- Lägg till test script i package.json:
+
+```json
+{
+  "scripts": {
+    ...
+    "test": "jest"
+    ...
+  }
+}
+```
+
 ## Exempel
 
 ```tsx
