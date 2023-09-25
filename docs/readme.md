@@ -76,5 +76,7 @@
 - [ ] [Testa redux](redux-testing.md)
 ## Testning - Cypress, Deployment
 
-
-
+- [ ] [Cypress](cypress.md)
+- [ ] [Cypress - end-to-end](cypress-e2e.md)
+- [ ] [Cypress - komponent](cypress-component.md)
+- [ ] [Deployment](deployment.md)

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders learn react link 1`] = `
+<DocumentFragment>
+  <button
+    class="sc-beyTiQ bIlWlZ"
+    variant="danger"
+  >
+    Klick
+  </button>
+</DocumentFragment>
+`;
