@@ -41,8 +41,8 @@ export const LoginFormHook = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
 
                 <div>
-                    <label htmlFor="employee">Anställd</label><input {...register("userType")} id="employee" type="radio" value="employee"></input>
-                    <label htmlFor="customer">Kund</label><input {...register("userType")} id="customer" type="radio" value="customer"></input>
+                    <label htmlFor="employee">Anställd</label><input {...register("userType")} data-testid="usertype-employee" id="employee" type="radio" value="employee"></input>
+                    <label htmlFor="customer">Kund</label><input {...register("userType")} data-testid="usertype-customer" id="customer" type="radio" value="customer"></input>
                 </div>
 
                 {userType === "customer" ? <>
@@ -50,6 +50,7 @@ export const LoginFormHook = () => {
                         <label>Användarnamn:</label>
                         {errors.username?.type === "required" && <div style={{ color: "red" }}>Du har inte fyllt i användarnamn</div>}
                         <input
+                            data-testid="username"
                             {...register("username", { required: true })}
                             type="text"
                         ></input>
@@ -61,6 +62,7 @@ export const LoginFormHook = () => {
                         {errors.password?.type === "minLength" && <div style={{ color: "red" }}>Lösenordet måste vara minst 3 tecken</div>}
 
                         <input
+                            data-testid="password"
                             {...register("password", { required: true, minLength: 3 })}
                             type="password"></input>
                     </div>
@@ -71,6 +73,7 @@ export const LoginFormHook = () => {
                         {errors.email?.type === "required" && <div style={{ color: "red" }}>Du har inte fyllt i e-post</div>}
                         {errors.email?.type === "pattern" && <div style={{ color: "red" }}>Du måste fylla i en korrekt e-post</div>}
                         <input
+                            data-testid="email"
                             {...register("email", { required: true, pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g })}
                             type="text"
                         ></input>
@@ -78,7 +81,7 @@ export const LoginFormHook = () => {
 
                 </>}
 
-                <button type="submit">Logga in</button>
+                <button type="submit" data-testid="login-button">Logga in</button>
             </form>
         </>)
 }
